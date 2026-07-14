@@ -41,7 +41,7 @@
 
 ### On-Chain Call
 
-Calls `issueCredential(issuer, subject, credentialType, metadataHash)` from `lib/contracts/quorumProof.ts`, which simulates the `issue_credential` Soroban contract method and returns the new `bigint` credential ID.
+Calls `issueCredential(issuer, subject, credentialType, metadataHash)` from `lib/contracts/credentialProtocol.ts`, which simulates the `issue_credential` Soroban contract method and returns the new `bigint` credential ID.
 
 The metadata hash string is UTF-8 encoded to `Uint8Array` before being passed to the contract.
 

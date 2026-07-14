@@ -1,12 +1,12 @@
 #!/bin/bash
 
-# QuorumProof Dashboard - Automated Setup Script
+# CredentialProtocol Dashboard - Automated Setup Script
 # This script will install Node.js and all project dependencies
 
 set -e
 
 echo "╔════════════════════════════════════════════════════════════╗"
-echo "║     QuorumProof Dashboard - Automated Setup                ║"
+echo "║     CredentialProtocol Dashboard - Automated Setup                ║"
 echo "╚════════════════════════════════════════════════════════════╝"
 echo ""
 

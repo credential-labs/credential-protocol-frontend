@@ -1,9 +1,9 @@
 #!/bin/bash
 
-# QuorumProof Dashboard Installation Script
+# CredentialProtocol Dashboard Installation Script
 
 echo "╔════════════════════════════════════════════════════════════╗"
-echo "║        QuorumProof Dashboard - Setup Script               ║"
+echo "║        CredentialProtocol Dashboard - Setup Script               ║"
 echo "╚════════════════════════════════════════════════════════════╝"
 echo ""
 

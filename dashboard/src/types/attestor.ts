@@ -1,5 +1,5 @@
 /**
- * Attestor types and interfaces for the QuorumProof dashboard
+ * Attestor types and interfaces for the CredentialProtocol dashboard
  */
 
 export interface Attestor {

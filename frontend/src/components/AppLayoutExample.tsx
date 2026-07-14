@@ -17,7 +17,7 @@ export function AppLayoutExample() {
       <div className="max-w-2xl space-y-6">
         <h1 className="text-2xl font-bold text-white">Dashboard</h1>
         <p className="text-slate-400">
-          Welcome to QuorumProof. Use the navigation to verify credentials,
+          Welcome to CredentialProtocol. Use the navigation to verify credentials,
           manage your quorum slice, or adjust settings.
         </p>
 

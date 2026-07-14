@@ -1,4 +1,4 @@
-# QuorumProof Dashboard - Setup & Installation Guide
+# Credential Protocol Dashboard - Setup & Installation Guide
 
 ## Prerequisites
 

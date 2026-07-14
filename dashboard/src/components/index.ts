@@ -1,5 +1,5 @@
 /**
- * Component exports for the QuorumProof Dashboard
+ * Component exports for the CredentialProtocol Dashboard
  */
 
 export { CredentialCard, type CredentialCardProps } from './CredentialCard'

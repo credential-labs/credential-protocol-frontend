@@ -12,7 +12,7 @@ This application requires several environment variables to be configured for pro
 |----------|-------------|---------|
 | `VITE_STELLAR_NETWORK` | Stellar network to connect to | `testnet` |
 | `VITE_STELLAR_RPC_URL` | Soroban RPC endpoint URL | `https://soroban-testnet.stellar.org` |
-| `VITE_CONTRACT_QUORUM_PROOF` | QuorumProof contract ID | `C...` |
+| `VITE_CONTRACT_CREDENTIAL_PROTOCOL` | Credential Protocol contract ID | `C...` |
 | `VITE_CONTRACT_SBT_REGISTRY` | SBT Registry contract ID | `C...` |
 | `VITE_CONTRACT_ZK_VERIFIER` | ZK Verifier contract ID | `C...` |
 

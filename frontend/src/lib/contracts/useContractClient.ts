@@ -2,25 +2,25 @@
  * useContractClient.ts — Unified React hook that exposes all three contract clients.
  *
  * Usage:
- *   const { quorumProof, sbtRegistry, zkVerifier } = useContractClient();
- *   const cred = await quorumProof.getCredential(1n);
+ *   const { credentialProtocol, sbtRegistry, zkVerifier } = useContractClient();
+ *   const cred = await credentialProtocol.getCredential(1n);
  */
 
-import * as quorumProof from './quorumProof';
+import * as credentialProtocol from './credentialProtocol';
 import * as sbtRegistry from './sbtRegistry';
 import * as zkVerifier from './zkVerifier';
 
-export type { Credential, QuorumSlice } from './quorumProof';
+export type { Credential, QuorumSlice } from './credentialProtocol';
 export type { SoulboundToken } from './sbtRegistry';
 export type { ClaimType, ProofRequest } from './zkVerifier';
 
 export interface ContractClient {
-  quorumProof: typeof quorumProof;
+  credentialProtocol: typeof credentialProtocol;
   sbtRegistry: typeof sbtRegistry;
   zkVerifier: typeof zkVerifier;
   /** Contract addresses resolved from env vars (empty string if not set). */
   addresses: {
-    quorumProof: string;
+    credentialProtocol: string;
     sbtRegistry: string;
     zkVerifier: string;
   };
@@ -32,11 +32,11 @@ export interface ContractClient {
  */
 export function useContractClient(): ContractClient {
   return {
-    quorumProof,
+    credentialProtocol,
     sbtRegistry,
     zkVerifier,
     addresses: {
-      quorumProof: import.meta.env.VITE_CONTRACT_QUORUM_PROOF ?? '',
+      credentialProtocol: import.meta.env.VITE_CONTRACT_CREDENTIAL_PROTOCOL ?? '',
       sbtRegistry: import.meta.env.VITE_CONTRACT_SBT_REGISTRY ?? '',
       zkVerifier: import.meta.env.VITE_CONTRACT_ZK_VERIFIER ?? '',
     },

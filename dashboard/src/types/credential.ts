@@ -1,5 +1,5 @@
 /**
- * Credential types and interfaces for the QuorumProof dashboard
+ * Credential types and interfaces for the CredentialProtocol dashboard
  */
 
 export type CredentialStatus = 'attested' | 'pending' | 'revoked'

@@ -65,7 +65,7 @@ Once Node.js and npm are installed:
 ### 1. Navigate to Dashboard Directory
 
 ```bash
-cd /home/eunice/QuorumProof/dashboard
+cd /home/eunice/credential-protocol/dashboard
 ```
 
 ### 2. Install Project Dependencies

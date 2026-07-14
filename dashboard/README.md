@@ -1,6 +1,6 @@
 # Dashboard
 
-Frontend dashboard for the QuorumProof credential verification platform.
+Frontend dashboard for the Credential Protocol credential verification platform.
 
 ## Features
 

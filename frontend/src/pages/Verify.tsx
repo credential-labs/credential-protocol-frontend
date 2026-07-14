@@ -7,11 +7,11 @@ import {
   getAttestors,
   isExpired,
   isAttested,
-} from '../lib/contracts/quorumProof';
-import type { Credential } from '../lib/contracts/quorumProof';
+} from '../lib/contracts/credentialProtocol';
+import type { Credential } from '../lib/contracts/credentialProtocol';
 import { verifyClaim } from '../lib/contracts/zkVerifier';
 import type { ClaimType } from '../lib/contracts/zkVerifier';
-import { decodeMetadataHash, CONTRACT_ID, RPC_URL, NETWORK } from '../stellar';
+import { decodeMetadataHash, CONTRACT_ID, RPC_URL, NETWORK, validateShareToken, hexToUint8Array } from '../stellar';
 
 export const DEFAULT_SLICE_ID = 1n;
 
@@ -24,6 +24,8 @@ const CLAIM_TYPE_OPTIONS: { value: ClaimType; label: string }[] = [
   { value: 'HasDegree', label: '🎓 Degree' },
   { value: 'HasLicense', label: '🏛️ License' },
   { value: 'HasEmploymentHistory', label: '💼 Employment History' },
+  { value: 'HasCertification', label: '📜 Certification' },
+  { value: 'HasResearchPublication', label: '🔬 Research Publication' },
 ];
 
 const ZK_PRIVACY_TOOLTIP =
@@ -269,7 +271,14 @@ export default function Verify() {
 
   useEffect(() => {
     const preId = searchParams.get('id');
-    if (preId && !autoTriggered.current) {
+    const preToken = searchParams.get('token');
+    if (autoTriggered.current) return;
+    if (preToken) {
+      autoTriggered.current = true;
+      validateShareToken(hexToUint8Array(preToken))
+        .then((id) => fetchCred(BigInt(id)))
+        .catch(() => setError('This share link is invalid or has expired.'));
+    } else if (preId) {
       autoTriggered.current = true;
       const id = parseInt(preId, 10);
       if (!isNaN(id) && id > 0) fetchCred(BigInt(id));
@@ -283,9 +292,9 @@ export default function Verify() {
       <main className="container" style={{ paddingTop: 0, paddingBottom: 64 }}>
         <div className="verify-hero">
           <div className="verify-hero__eyebrow">⚡ Instant On-Chain Verification</div>
-          <h1 className="verify-hero__title">Verify Engineering Credentials</h1>
+          <h1 className="verify-hero__title">Verify Professional Credentials</h1>
           <p className="verify-hero__subtitle">
-            Confirm an engineer's credentials are authentic, attested by a quorum of trusted institutions, and have not been revoked — without connecting a wallet.
+            Confirm a professional's credentials are authentic, attested by a quorum of trusted institutions, and have not been revoked — without connecting a wallet.
           </p>
         </div>
         <div className="search-card" id="search-card">
@@ -366,7 +375,7 @@ export default function Verify() {
         <div className="container">
           Powered by <a href="https://stellar.org" target="_blank" rel="noopener">Stellar Soroban</a>
           {' · '}
-          <a href="https://github.com/Phantomcall/QuorumProof" target="_blank" rel="noopener">QuorumProof</a>
+          <a href="https://github.com/credential-labs/credential-protocol" target="_blank" rel="noopener">Credential Protocol</a>
         </div>
       </footer>
     </>
