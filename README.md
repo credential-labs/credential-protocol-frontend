@@ -51,7 +51,7 @@ A Vue.js 3 + Vite + TypeScript single-page application (SPA) for:
 - Responsive UI with Tailwind CSS
 - WebSocket support for live updates
 
-**Live Demo**: https://frontend-ch9j07hhg-uchechithelmaonye-cpus-projects.vercel.app
+**Live Demo**: https://frontend-rho-five-76.vercel.app
 
 ### 2. Dashboard (`/dashboard`)
 
@@ -69,7 +69,7 @@ A separate Vite-powered React application for:
 - Empty state handling and error boundaries
 - Real-time sync with backend
 
-**Live Demo**: https://dashboard-ow73ge3h8-uchechithelmaonye-cpus-projects.vercel.app
+**Live Demo**: https://dashboard-henna-sigma-61.vercel.app
 
 ## 🔧 Prerequisites
 
